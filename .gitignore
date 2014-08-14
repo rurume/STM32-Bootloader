@@ -1,0 +1,8 @@
+APP/Obj/
+APP/List/
+IAP/Obj/
+IAP/List/
+html/
+latex/
+*.bak
+*.dep
