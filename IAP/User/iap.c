@@ -51,7 +51,7 @@ typedef void(*pFunction)(void);
 #endif
 
 /* Define Application Parameters */
-#define ProgramSize  5952
+#define ProgramSize  5792
 #define ApplicationAddress    0x08003000
 
 /* Private macro -------------------------------------------------------------*/

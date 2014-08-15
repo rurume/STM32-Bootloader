@@ -48,13 +48,12 @@ int main(void)
      */
 	/* System Clocks Configuration */
   RCC_Configuration();
-	/* Configure DMA1 and use AHB_clock */
-  DMA_Configuration();    
   /* Configure the GPIO ports */
   GPIO_Configuration();
+	/* Configure DMA1 and use AHB_clock */
+  DMA_Configuration();    
 	/* Configure the USART1 */
 	USART_Configuration();
-	/* GPIOD Periph clock enable */
 
   while (1)
   {
@@ -92,7 +91,7 @@ int main(void)
   */
 void USART_Configuration(void)
 {
-	/* USART1 and USARTz configured as follow:
+	/* USART1configured as follow:
         - BaudRate = 115200 baud  
         - Word Length = 8 Bits
         - One Stop Bit
@@ -132,15 +131,11 @@ void GPIO_Configuration(void)
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
 
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
-
   /* Configure PD0 and PD2 in output pushpull mode */
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_2;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
   GPIO_Init(GPIOE, &GPIO_InitStructure);
-	
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOE, ENABLE);
 }
 
 /**
@@ -192,12 +187,9 @@ void DMA_Configuration(void)
   * @retval None
   */
 void RCC_Configuration(void)
-{    
-  /* Enable GPIO clock */
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO, ENABLE);
-
+{
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOE | RCC_APB2Periph_AFIO, ENABLE);
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE); 
-
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
 }
 

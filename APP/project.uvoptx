@@ -183,22 +183,6 @@
           <ExecCommand></ExecCommand>
           <Expression>0x00000000</Expression>
         </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>74</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134218604</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\Users\hmit0768\project\stm32f107vct6\APP\User\led.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
       </Breakpoint>
       <WatchWindow1>
         <Ww>
@@ -273,6 +257,10 @@
       <LintExecutable></LintExecutable>
       <LintConfigFile></LintConfigFile>
       <SystemViewers>
+        <Entry>
+          <Name>System Viewer\GPIOE</Name>
+          <WinId>35904</WinId>
+        </Entry>
         <Entry>
           <Name>System Viewer\NVIC</Name>
           <WinId>35903</WinId>
